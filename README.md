@@ -10,4 +10,6 @@ Write MASTER SCRIPT
   3. Make HMM
   4. Map models to sequences
   5. Estimate taxonomy of sequences
+      Mash
+        Define p-value cut-off (-v)
   6. Combine tables
