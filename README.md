@@ -2,3 +2,12 @@
 
 
 <img src="./pipeline.png" img align="center" width="900"/> 
+
+
+Write MASTER SCRIPT
+  1. Fetch sequences
+  2. Clustering
+  3. Make HMM
+  4. Map models to sequences
+  5. Estimate taxonomy of sequences
+  6. Combine tables
