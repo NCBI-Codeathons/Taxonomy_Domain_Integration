@@ -3,6 +3,7 @@
 
 <img src="./pipeline.png" img align="center" width="900"/> 
 
+https://docs.google.com/presentation/d/1XBmCPwnyJttWEZb0vtMPxfsFuQV68UZU5FIr64T0tjs/edit#slide=id.p
 
 Write MASTER SCRIPT
   1. Fetch sequences
