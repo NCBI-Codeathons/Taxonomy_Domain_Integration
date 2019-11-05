@@ -28,7 +28,7 @@ def main():
 
 	#TODO Can incorporate shared hash functions in the future
 	fw = open(args.output_file, "w")
-	fw.write("#queryseq,taxid,speciestaxid,distance\n")
+	fw.write("#queryseq,assembly_file,taxid,speciestaxid,distance\n")
 	distance_threshold = 1
 	with open (args.contig_dist_file) as f:
 		for line in f:
