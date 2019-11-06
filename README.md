@@ -32,5 +32,17 @@ Usage for non-parallel implementation:
 $ RWrapperB.sh <Seqs.fna> <matrixout> <namesoutput> <PATH>
 ```
 
-The distance matrix is natively output with rows and columns named by a unique integer which can be mapped to the names text file. This matrix can then be fed into ... ... 
+The distance matrix is natively output with rows and columns named by a unique integer which can be mapped to the names text file. This matrix can then be fed into the subsequent clustering approach
+
+
+Unsupervized clustering for grouping similar genomes:
+
+The distance matrix generated is provided as an input to `cluster_similar_fasta_sequences.py` along with the a list of names of sequences. An unsupervized clustering approach, based on PCA and K-means, is used to infer the clusters from the distance matrix. The python file also required the actual fasta sequences as an input, through a single multi-sequence fasta, and generates multiple fasta files, each of which contains the fasta sequences identified within a same cluster.
+
+Usage:
+```
+$ python3 -d <distance_matrix_file> -n <names_file> -s <Seqs.fna> -o <out_dir>
+```
+
+The fasta files generated have filenames of the form input_files_#.fasta which can then be used directly for whole genome alignment or multiple sequence alignment
 
