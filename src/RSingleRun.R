@@ -12,7 +12,7 @@ FNANames <- names(FNAs)
 
 DBPATH <- tempfile()
 
-pBar <- txtProgressBar(style = 3L)
+pBar <- txtProgressBar(style = 1L)
 for (m1 in seq_along(FNAs)) {
   Seqs2DB(seqs = FNAs[m1],
           dbFile = DBPATH,

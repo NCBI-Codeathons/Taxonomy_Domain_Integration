@@ -41,13 +41,13 @@ echo "Initial Data completed"
 
 
 # This step needs to be parallelized
-for val in `seq $NumIterations`
-do
-  # (RScript ~/Dropbox/CodeAthons/TDILocal/src/ScriptB.R $val $SqlFile $QueueFolder $RDataInitial || echo failed >$QueueFolder.$val.err) &
-  # RScript ~/Dropbox/CodeAthons/TDILocal/src/ScriptB.R $val $TempDir01 $TempDir02
-  RScript $UserPATH/Taxonomy_Domain_Integration/src/RScriptB.R $val $TempDir01 $TempDir02
-done
-# wait
+# for val in `seq $NumIterations`
+# do
+#   RScript $UserPATH/Taxonomy_Domain_Integration/src/RScriptB.R $val $TempDir01 $TempDir02
+# done
+
+# parallel --jobs $NumIterations 'RScript $UserPATH/Taxonomy_Domain_Integration/src/RScriptB.R {#} $TempDir01 $TempDir02'
+parallel --progress 'RScript $UserPATH/Taxonomy_Domain_Integration/src/RScriptB.R {#} $TempDir01 $TempDir02' ::: seq $NumIterations
 
 echo "Loop Completed"
 

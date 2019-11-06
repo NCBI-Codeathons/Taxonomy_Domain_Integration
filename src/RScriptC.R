@@ -29,7 +29,7 @@ DistMat <- matrix(data = 0,
 dimnames(DistMat) <- list(seq(nrow(DistMat)),
                           seq(nrow(DistMat)))
 
-pBar <- txtProgressBar(style = 3L)
+pBar <- txtProgressBar(style = 1L)
 
 for (m1 in seq_along(FileList)) {
   load(FileList[m1],
