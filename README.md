@@ -52,3 +52,4 @@ We then linked taxonomic IDs to the identified references, and added SRR accessi
 python get_taxonomy_id.py ref_viruses_rep_genomes_v5.ids <file with the list files of mash distance>
 ```
 
+https://docs.google.com/presentation/d/1sKatkx4rXthhOMxFKwEHJnKdZq1lrXRzq3TuDR7DaRo/edit#slide=id.g6adb6dea12_0_72
