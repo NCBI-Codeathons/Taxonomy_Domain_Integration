@@ -5,6 +5,8 @@
 
 https://docs.google.com/presentation/d/1XBmCPwnyJttWEZb0vtMPxfsFuQV68UZU5FIr64T0tjs/edit#slide=id.p
 
+<img src="./pipeline_ex_2.png" img align="center" width="600"/>
+
 Write MASTER SCRIPT
   1. Fetch sequences
   2. Clustering
