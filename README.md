@@ -43,11 +43,11 @@ $ python3 -d <distance_matrix_file> -n <names_file> -s <Seqs.fna> -o <out_dir>
 The fasta files generated have filenames of the form input_files_#.fasta which can then be used directly for whole genome alignment or multiple sequence alignment
 
 ## Assign taxonomy to the contig sequences
-We used Mash program to search closest viral reference for each contig in the sample. We employed p-value cutoff to limit the top matching references. 
+We used Mash to search for the closest viral reference for each contig in the sample. We employed a p-value cutoff (0.05) to limit to top-matching references. 
 ```
 VADIM script
 ```
-To link the taxonomic IDs to the genbank contigs, and to add accession identifier to the contigs to make them unique. 
+We then linked taxonomic IDs to the identified references, and added SRR accession identifiers to all contigs to make them unique. 
 ```
 python get_taxonomy_id.py ref_viruses_rep_genomes_v5.ids <file with the list files of mash distance>
 ```
