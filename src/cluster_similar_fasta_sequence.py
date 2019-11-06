@@ -94,14 +94,15 @@ def get_kmeans_elbow_point(X, linearity_limiting_threshold=1.1):
             previous_sum_of_sq = current_sum_of_sq
 
 
-def get_clustered_sequence_fasta(all_sequences_fasta_filename, cat_fasta_id_list, outfilename):
-    cmd = "xargs samtools faidx {} < {} > {}".format(all_sequences_fasta_filename, cat_fasta_id_list, outfilename)
+def get_clustered_sequence_fasta(all_sequences_fasta_filename, fasta_id_list_file, outfilename):
+    cmd = "xargs samtools faidx {} < {} > {}".format(all_sequences_fasta_filename, fasta_id_list_file, outfilename)
     print(cmd)
     try:
         p = subprocess.Popen(cmd, shell=True)
         # p = subprocess.Popen(shlex.split(cmd), shell=True)#, stdout=open(mum_results_file, 'w'))
         p.wait()
         print(cmd, ' output obtained')
+        p = subprocess.Popen(shlex.split("rm -rf {}".format(fasta_id_list_file)))
     except Exception as e:
         print(cmd, e)
 
