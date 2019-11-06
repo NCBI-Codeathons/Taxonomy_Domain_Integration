@@ -24,12 +24,12 @@ Two Wrapper scripts exist for generating distance matrices for unsupervised clus
 
 Usage for parallel implementation:
 ```
-$ WrapperA.sh <Seqs.fna> <matrixout> <namesoutput> <PATH>
+$ RWrapperA.sh <Seqs.fna> <matrixout> <namesoutput> <PATH>
 ```
 
 Usage for non-parallel implementation:
 ```
-$ WrapperB.sh <Seqs.fna> <matrixout> <namesoutput> <PATH>
+$ RWrapperB.sh <Seqs.fna> <matrixout> <namesoutput> <PATH>
 ```
 
 The distance matrix is natively output with rows and columns named by a unique integer which can be mapped to the names text file. This matrix can then be fed into ... ... 
