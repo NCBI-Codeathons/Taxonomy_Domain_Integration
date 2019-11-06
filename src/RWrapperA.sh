@@ -47,7 +47,7 @@ echo "Initial Data completed"
 # done
 
 # parallel --jobs $NumIterations 'RScript $UserPATH/Taxonomy_Domain_Integration/src/RScriptB.R {#} $TempDir01 $TempDir02'
-parallel --progress 'RScript $UserPATH/Taxonomy_Domain_Integration/src/RScriptB.R {#} $TempDir01 $TempDir02' ::: `seq $NumIterations`
+parallel --progress --env UserPATH=$4 'RScript $UserPATH/Taxonomy_Domain_Integration/src/RScriptB.R {#} $TempDir01 $TempDir02' ::: `seq $NumIterations`
 
 echo "Loop Completed"
 
