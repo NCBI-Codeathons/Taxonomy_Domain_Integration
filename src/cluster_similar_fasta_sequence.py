@@ -99,10 +99,10 @@ def get_clustered_sequence_fasta(all_sequences_fasta_filename, fasta_id_list_fil
     print(cmd)
     try:
         p = subprocess.Popen(cmd, shell=True)
-        # p = subprocess.Popen(shlex.split(cmd), shell=True)#, stdout=open(mum_results_file, 'w'))
         p.wait()
         print(cmd, ' output obtained')
         p = subprocess.Popen(shlex.split("rm -rf {}".format(fasta_id_list_file)))
+        p.wait()
     except Exception as e:
         print(cmd, e)
 
