@@ -20,7 +20,7 @@ Write MASTER SCRIPT
 
 Generate a distance matrix for Clustering:
 
-Two Wrapper scripts exist for generating distance matrices for unsupervised clustering of sequences. RWrapperA.sh makes use of GNU parallel tools, while RWrapperB.sh does not. Both scripts require a single multifasta file, a matrix output, a names output file, and a PATH.
+Two Wrapper scripts exist for generating distance matrices for unsupervised clustering of sequences. RWrapperA.sh makes use of GNU parallel tools, while RWrapperB.sh does not. Both scripts require a single multifasta file of nucleotide sequences, a matrix output, a names output file, and a PATH.
 
 Usage for parallel implementation:
 ```
