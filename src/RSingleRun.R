@@ -2,8 +2,6 @@
 # Author: Nicholas Cooley npc19@pitt.edu
 ###### -- libraries, arguments, data ------------------------------------------
 
-library(DECIPHER)
-
 Arguments <- commandArgs(trailingOnly = TRUE)
 suppressMessages(library(DECIPHER))
 FNAs <- readDNAStringSet(filepath = Arguments[1L])
@@ -25,7 +23,7 @@ for (m1 in seq_along(FNAs)) {
                     value = m1 / length(FNAs))
 }
 
-cat("/n")
+cat("\n")
 
 # dropScore = 0 .. will attempt to extend blocks with alignment
 Syn <- FindSynteny(dbFile = DBPATH,
