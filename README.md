@@ -1,11 +1,7 @@
 # Taxonomy_Domain_Integration
 
 
-<img src="./pipeline.png" img align="center" width="900"/> 
-
-https://docs.google.com/presentation/d/1XBmCPwnyJttWEZb0vtMPxfsFuQV68UZU5FIr64T0tjs/edit#slide=id.p
-
-<img src="./pipeline_ex_2.png" img align="center" width="600"/>
+<img src="./full_methods.png" img align="center" width="900"/> 
 
 Write MASTER SCRIPT
   1. Fetch sequences
