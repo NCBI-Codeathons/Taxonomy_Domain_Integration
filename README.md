@@ -1,7 +1,7 @@
 # Taxonomy_Domain_Integration
 
 
-<img src="./methods.png" img align="center" width="1300"/> 
+<img src="./methods.png" img align="center" width="1500"/> 
 
 Write MASTER SCRIPT
   1. Fetch sequences
