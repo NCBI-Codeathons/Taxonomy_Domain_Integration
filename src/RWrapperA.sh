@@ -52,7 +52,7 @@ done
 echo "Loop Completed"
 
 # RScript ~/Dropbox/CodeAthons/TDILocal/src/ScriptC.R $TempDir01 $TempDir02 $DistOut $NamesOut
-RScript $UserPATH/TDILocal/src/RScriptC.R $TempDir01 $TempDir02 $DistOut $NamesOut
+RScript $UserPATH/Taxonomy_Domain_Integration/src/RScriptC.R $TempDir01 $TempDir02 $DistOut $NamesOut
 
 echo "R Section Completed"
 
