@@ -12,6 +12,13 @@ FNANames <- names(FNAs)
 
 DBPATH <- tempfile()
 
+AvailCores <- detectCores()
+
+if (is.na(AvailCores) |
+    length(AvailCores) == 0L) {
+  AvailCores <- 1L
+}
+
 pBar <- txtProgressBar(style = 1L)
 for (m1 in seq_along(FNAs)) {
   Seqs2DB(seqs = FNAs[m1],
@@ -27,8 +34,9 @@ cat("\n")
 
 # dropScore = 0 .. will attempt to extend blocks with alignment
 Syn <- FindSynteny(dbFile = DBPATH,
-                   verbose = TRUE,
-                   dropScore = 0)
+                   dropScore = 0,
+                   processors = AvailCores,
+                   verbose = TRUE)
 
 unlink(DBPATH)
 
