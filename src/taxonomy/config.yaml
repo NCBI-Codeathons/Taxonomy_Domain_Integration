@@ -1,0 +1,3 @@
+bucket: viral2_test_bucket
+dir: 3k
+ref_sketch: viral2_test_bucket/ref_viruses_rep_genomes_v5.fasta.msh

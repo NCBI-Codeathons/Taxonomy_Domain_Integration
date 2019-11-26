@@ -1,8 +1,10 @@
 from snakemake.remote.GS import RemoteProvider as GSRemoteProvider
 GS = GSRemoteProvider()
 
-SAMPLES, *_ = GS.glob_wildcards('viral2_test_bucket/3k/{acc}.realign.local.fa')
-msh=GS.remote("viral2_test_bucket/ref_viruses_rep_genomes_v5.fasta.msh")
+configfile: 'config.yaml'
+
+SAMPLES, *_ = GS.glob_wildcards(config['bucket'] + '/'+ config['dir']+'/{acc}.realign.local.fa')
+msh=GS.remote(config["ref_sketch"])
 
 rule sketch:
     input: fasta="3k/{acc}.realign.local.fa"
