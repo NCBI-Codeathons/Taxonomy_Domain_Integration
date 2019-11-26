@@ -1,0 +1,21 @@
+from snakemake.remote.GS import RemoteProvider as GSRemoteProvider
+GS = GSRemoteProvider()
+
+SAMPLES, *_ = GS.glob_wildcards('viral2_test_bucket/3k/{acc}.realign.local.fa')
+msh=GS.remote("viral2_test_bucket/ref_viruses_rep_genomes_v5.fasta.msh")
+
+rule sketch:
+    input: fasta="3k/{acc}.realign.local.fa"
+    output: msh="3k/{acc}.realign.local.fa.msh"
+    run: shell("mash sketch -i {input.fasta}")
+
+rule dist:
+    input: sketch="3k/{acc}.realign.local.fa.msh", msh=msh
+    output: dist="3k/{acc}.realign.local.fa.dist"
+    threads: 6
+    shell: '''
+mash dist -v 0.05 -p 6 {input.msh} {input.sketch} | sed -rn 's/\\t([^0][0-9]+)\\/([0-9]+)$/\\t\\1\\t\\2/p' | sort -nrk5 > {output.dist}
+'''
+
+rule check_all:
+    input: expand("3k/{acc}.realign.local.fa.dist", acc=SAMPLES) 
